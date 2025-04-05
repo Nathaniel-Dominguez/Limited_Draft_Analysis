@@ -179,3 +179,23 @@ For best results, customize the deck building algorithm to better match your pre
 - [Seaborn Documentation](https://seaborn.pydata.org/examples/index.html)
 - [Matplotlib Documentation](https://matplotlib.org/stable/users/index.html)
 - [Scryfall API Documentation](https://scryfall.com/docs/api)
+
+## License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+
+## You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+## Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- NonCommercial — You may not use the material for commercial purposes.
+- ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+## Attribution:
+- This project uses data from the Scryfall API (https://scryfall.com/docs/api) which is licensed under CC BY-NC-SA 4.0.
+- Card information provided by Scryfall © Scryfall LLC.
+- Magic: The Gathering is © Wizards of the Coast LLC.
+
+Full license text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
