@@ -16,7 +16,7 @@ class DraftSimulator:
         self.cards_in_set = []
         self.card_data = {}
         self.sealed_pool_size = 90  # 6 boosters × 15 cards
-        self.deck_size = 40
+        self.deck_size = 23  # Non-land cards only (17 lands would be added separately)
         self.basic_lands = ["Plains", "Island", "Swamp", "Mountain", "Forest"]
         # Define common archetypes
         self.archetypes = {
@@ -508,9 +508,9 @@ class DraftSimulator:
         # These are our 23 non-land cards
         selected_cards = potential_cards[:23] if len(potential_cards) > 23 else potential_cards
         
-        # Add basic lands based on color distribution
-        lands_needed = 40 - len(selected_cards)
-        lands = []
+        # Calculate land distribution based on color requirements, but don't add them to the deck
+        # We're aiming for 23 non-land cards, with 17 lands assumed to be added separately
+        lands_needed = 17  # Fixed at 17 lands instead of calculating from 40 - len(selected_cards)
         
         # Count mana symbols in selected cards to determine land distribution
         mana_symbols = {"W": 0, "U": 0, "B": 0, "R": 0, "G": 0}
@@ -528,16 +528,18 @@ class DraftSimulator:
             # Equal distribution for primary colors
             if len(primary_colors) == 1:
                 # Mono-color deck
-                lands.extend([{"name": self.basic_land_name(primary_colors[0]), 
-                              "type_line": "Basic Land"}] * lands_needed)
+                lands = [{"name": self.basic_land_name(primary_colors[0]), 
+                          "type_line": "Basic Land"}] * lands_needed
             else:
                 # Multi-color deck, distribute evenly
+                lands = []
                 lands_per_color = lands_needed // len(primary_colors)
                 for color in primary_colors:
                     lands.extend([{"name": self.basic_land_name(color), 
                                   "type_line": "Basic Land"}] * lands_per_color)
         else:
             # Distribute according to color requirements
+            lands = []
             for color in primary_colors:
                 color_ratio = mana_symbols[color] / total_colored_symbols if total_colored_symbols > 0 else 1/len(primary_colors)
                 land_count = int(lands_needed * color_ratio)
@@ -558,8 +560,9 @@ class DraftSimulator:
                     lands.pop(i)
                     break
         
-        # Combine lands and selected cards for final deck
-        final_deck = selected_cards + lands
+        # We're only returning the non-land cards - lands are calculated but not included
+        # Keeping land calculation for potential future use
+        final_deck = selected_cards
         return final_deck
     
     def basic_land_name(self, color):
@@ -785,7 +788,7 @@ def main():
     
     # Print some interesting findings
     print("\n--- Draft Analysis Results ---")
-    print(f"Analyzed {len(decks)} simulated sealed decks")
+    print(f"Analyzed {len(decks)} simulated sealed decks (23 non-land cards each)")
     
     print("\nTop 10 Most Drafted Cards:")
     for card, count in list(analysis["most_common_cards"].items())[:10]:

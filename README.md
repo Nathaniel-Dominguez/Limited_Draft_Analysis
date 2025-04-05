@@ -4,10 +4,11 @@ This Python script simulates and analyzes Magic: The Gathering sealed deck draft
 
 ## 🎯 Features
 
-- Simulates 100 sealed 40-card decks (6 boosters per deck)
+- Simulates 100 sealed decks with 23 non-land cards each (17 basic lands assumed to be added separately)
 - Supports multiple deck archetypes (guild pairs, three-color combinations, mono-color)
 - Analyzes card frequency, color distribution, mana curve, and more
 - Compares performance across different archetypes
+- Uses NumPy for efficient statistical analysis and visualization
 - Excludes basic lands from analysis for clearer insights
 - Saves results to CSV and JSON files for further analysis
 - Visualizes draft data with interactive charts and graphs
@@ -47,6 +48,10 @@ By default, the script uses the "tdm" set code. To change the set:
 1. Open `mtg_draft_analysis.py`
 2. Modify the `set_code` variable in the `main()` function
 3. Use the three-letter set code of your preferred MTG set
+
+#### Deck Construction
+
+The simulator builds decks with 23 non-land cards following standard Limited format guidelines, with the understanding that 17 basic lands would be added to make a complete 40-card deck. The land distribution is calculated based on the color requirements of the selected cards but not included in the final output.
 
 #### Adjusting Archetypes
 

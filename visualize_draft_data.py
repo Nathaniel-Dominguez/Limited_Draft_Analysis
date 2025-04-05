@@ -825,7 +825,7 @@ def plot_archetype_mana_curves(analysis, output_dir):
         print(f"Mana curve visualizations saved to {curves_dir} and combined chart saved to {output_dir}")
 
 def analyze_deck_statistics(df, output_dir):
-    """New function using NumPy to calculate and visualize deck statistics"""
+    """New function using NumPy to calculate and visualize deck statistics for 23-card decks (non-land cards only)"""
     if 'type_line' not in df.columns or 'cmc' not in df.columns:
         print("Required columns not found for deck statistics analysis")
         return
@@ -886,9 +886,10 @@ def analyze_deck_statistics(df, output_dir):
                 label=f'Mean = {np.mean(counts):.1f}')
     plt.axvline(x=np.median(counts), color='green', linestyle='-',
                label=f'Median = {np.median(counts):.1f}')
-    plt.axvline(x=np.std(counts), color='purple', linestyle='-',
-                label=f'Standard Deviation = {np.std(counts):.1f}')
-    plt.xlabel('Creature Count')
+    ideal_creature_count = 15  # Typical guideline for a 23-card deck
+    plt.axvline(x=ideal_creature_count, color='blue', linestyle=':',
+                label=f'Typical guideline = {ideal_creature_count}')
+    plt.xlabel('Creature Count (in 23-card deck)')
     plt.ylabel('Number of Decks')
     plt.title('Creature Count Distribution')
     plt.legend()
@@ -903,8 +904,6 @@ def analyze_deck_statistics(df, output_dir):
                 label=f'Mean = {np.mean(mean_cmcs):.2f}')
     plt.axvline(x=np.median(mean_cmcs), color='green', linestyle='-',
                 label=f'Median = {np.median(mean_cmcs):.2f}')
-    plt.axvline(x=np.std(mean_cmcs), color='purple', linestyle='-',
-                label=f'Standard Deviation = {np.std(mean_cmcs):.2f}')
     plt.xlabel('Average Mana Value')
     plt.ylabel('Number of Decks')
     plt.title('Average Mana Value Distribution')
@@ -920,8 +919,6 @@ def analyze_deck_statistics(df, output_dir):
                 label=f'Mean = {np.mean(ratios):.2f}')
     plt.axvline(x=np.median(ratios), color='green', linestyle='-',
                 label=f'Median = {np.median(ratios):.2f}')
-    plt.axvline(x=np.std(ratios), color='purple', linestyle='-',
-                label=f'Standard Deviation = {np.std(ratios):.2f}')
     plt.xlabel('Creature/Sorcery/Instant Ratio')
     plt.ylabel('Number of Decks')
     plt.title('Creature/Sorcery/Instant Ratio Distribution')
