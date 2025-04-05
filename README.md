@@ -167,13 +167,15 @@ For best results, customize the deck building algorithm to better match your pre
 
 ## 🙏 Acknowledgments
 
-- [Scryfall API](https://scryfall.com/docs/api) for providing the card data
+- [Pandas](https://pandas.pydata.org/) for data manipulation and analysis
 - [Seaborn](https://seaborn.pydata.org/) for the statistical visualizations
 - [Matplotlib](https://matplotlib.org/) for the base plotting library 
+- [Scryfall API](https://scryfall.com/docs/api) for providing the card data
 - :shipit:
 
 ## 📚 References
 
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
 - [Seaborn Documentation](https://seaborn.pydata.org/examples/index.html)
 - [Matplotlib Documentation](https://matplotlib.org/stable/users/index.html)
 - [Scryfall API Documentation](https://scryfall.com/docs/api)
