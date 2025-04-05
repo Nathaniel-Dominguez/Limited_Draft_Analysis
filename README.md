@@ -113,6 +113,7 @@ The visualization script generates the following charts:
 - **Type Distribution**: Distribution of cards by card type
 - **Rarity Distribution**: Breakdown of cards by rarity
 - **Color Pair Distribution**: Frequency of two-color combinations in decks
+- **Deck Statistics**: NumPy-powered analysis of deck construction metrics including creature counts, mana value distributions, and card type ratios
 
 #### Archetype Visualization
 
@@ -152,6 +153,7 @@ You can modify:
 ## 🧰 Technologies Used
 
 - **Pandas**: Used for data manipulation, transformation, and analysis
+- **NumPy**: Powers efficient numerical operations, statistical calculations, and data processing
 - **Seaborn**: Built on Matplotlib, provides enhanced statistical visualizations
 - **Matplotlib**: Creates the base plots and charts
 - **Scryfall API**: Source of card data and metadata
@@ -168,6 +170,7 @@ For best results, customize the deck building algorithm to better match your pre
 ## 🙏 Acknowledgments
 
 - [Pandas](https://pandas.pydata.org/) for data manipulation and analysis
+- [NumPy](https://numpy.org/) for efficient numerical operations
 - [Seaborn](https://seaborn.pydata.org/) for the statistical visualizations
 - [Matplotlib](https://matplotlib.org/) for the base plotting library 
 - [Scryfall API](https://scryfall.com/docs/api) for providing the card data
@@ -176,6 +179,7 @@ For best results, customize the deck building algorithm to better match your pre
 ## 📚 References
 
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [Numpy Documentation](https://numpy.org/doc/stable/)
 - [Seaborn Documentation](https://seaborn.pydata.org/examples/index.html)
 - [Matplotlib Documentation](https://matplotlib.org/stable/users/index.html)
 - [Scryfall API Documentation](https://scryfall.com/docs/api)
