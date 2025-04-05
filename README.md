@@ -34,7 +34,7 @@ This Python script simulates and analyzes Magic: The Gathering sealed deck draft
 
 ## :godmode: Usage
 
-### Simulation
+### 💻 Simulation
 
 Run the simulation script with:
 
@@ -169,7 +169,8 @@ For best results, customize the deck building algorithm to better match your pre
 
 - [Scryfall API](https://scryfall.com/docs/api) for providing the card data
 - [Seaborn](https://seaborn.pydata.org/) for the statistical visualizations
-- [Matplotlib](https://matplotlib.org/) for the base plotting library
+- [Matplotlib](https://matplotlib.org/) for the base plotting library 
+- :shipit:
 
 ## 📚 References
 
